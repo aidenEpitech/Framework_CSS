@@ -1,0 +1,262 @@
+html
+  box-sizing: border-box
+
+*,
+*::before,
+*::after
+  box-sizing: inherit
+
+=padding_R_L($padding_R, $padding_L)
+  padding-right: $padding_R
+  padding-left: $padding_L
+
+=margin_R_L($margin_R, $margin_L)
+  margin-right: $margin_R
+  margin-left: $margin_L
+
+=test_hight
+  background-color: rgba(214, 110, 11, 0.5)
+
+=col_flex_auto
+  flex: 0 0 auto
+  width: auto
+  max-width: none
+
+=col_flex
+  flex-basis: 0
+  flex-grow: 1
+  max-width: 100%
+
+=pourcentage($i)
+  flex: 0 0 (100% * $i / 12)
+  max-width: 100% * $i / 12
+
+.container, .container-fluid
+  +test_hight
+
+  width: 100%
+  padding: 1px
+
+  +padding_R_L(0px, 0px)
+  +margin_R_L(auto, auto)
+
+.row
+  display: flex
+  flex-wrap: wrap
+
+  +padding_R_L(0px, 0px)
+
+.visible-all-block
+  display: block !important
+
+.hidden-all-none
+  display: none !important
+
+.col_base
+  position: relative
+  width: 100%
+  padding: 20px
+
+  +padding_R_L(14px, 14px)
+
+  text-align: center
+  min-height: 50px
+  border: 1px solid brown
+
+@for $i from 0 through 12
+  @if $i == 0
+    $i: auto
+
+    .col
+      @extend .col_base
+
+    .col-xs
+      @extend .col_base
+
+    .col-sm
+      @extend .col_base
+
+    .col-md
+      @extend .col_base
+
+    .col-lg
+      @extend .col_base
+
+    .col-xl
+      @extend .col_base
+
+    .col-#{$i}
+      @extend .col_base
+
+    .col-xs-#{$i}
+      @extend .col_base
+
+    .col-sm-#{$i}
+      @extend .col_base
+
+    .col-md-#{$i}
+      @extend .col_base
+
+    .col-lg-#{$i}
+      @extend .col_base
+
+    .col-xl-#{$i}
+      @extend .col_base
+  @else
+    .col-#{$i}
+      @extend .col_base
+
+    .col-sm-#{$i}
+      @extend .col_base
+
+    .col-md-#{$i}
+      @extend .col_base
+
+    .col-lg-#{$i}
+      @extend .col_base
+
+    .col-xl-#{$i}
+      @extend .col_base
+
+.col
+  +col_flex
+
+@for $i from 0 through 12
+  @if $i == 0
+    $i: auto
+
+    .col-#{$i}
+      +col_flex_auto
+  @else
+    .col-#{$i}
+      +pourcentage($i)
+
+@media (max-width: 476px)
+  .container
+    max-width: 440px
+
+  .visible-xs-block
+    display: block !important
+
+  .hidden-xs-none
+    display: none !important
+
+  .col-xs
+    +col_flex
+
+  @for $i from 0 through 12
+    @if $i == 0
+      $i: auto
+
+      .col-xs-#{$i}
+        +col_flex_auto
+    @else
+      .col-xs-#{$i}
+        +pourcentage($i)
+
+        &::before
+          content: ' xs '
+
+@media (min-width: 476px)
+  .container
+    max-width: 440px
+
+  .visible-sm-block
+    display: block !important
+
+  .hidden-sm-none
+    display: none !important
+
+  .col-sm
+    +col_flex
+
+  @for $i from 0 through 12
+    @if $i == 0
+      $i: auto
+
+      .col-sm-#{$i}
+        +col_flex_auto
+    @else
+      .col-sm-#{$i}
+        +pourcentage($i)
+
+        &::before
+          content: ' sm '
+
+@media (min-width: 768px)
+  .container
+    max-width: 720px
+
+  .visible-md-block
+    display: block !important
+
+  .hidden-md-none
+    display: none !important
+
+  .col-md
+    +col_flex
+
+  @for $i from 0 through 12
+    @if $i == 0
+      $i: auto
+
+      .col-md-#{$i}
+        +col_flex_auto
+    @else
+      .col-md-#{$i}
+        +pourcentage($i)
+
+        &::before
+          content: ' md '
+
+@media (min-width: 992px)
+  .container
+    max-width: 960px
+
+  .visible-lg-block
+    display: block !important
+
+  .hidden-lg-none
+    display: none !important
+
+  .col-lg
+    +col_flex
+
+  @for $i from 0 through 12
+    @if $i == 0
+      $i: auto
+
+      .col-lg-#{$i}
+        +col_flex_auto
+    @else
+      .col-lg-#{$i}
+        +pourcentage($i)
+
+        &::before
+          content: ' lg '
+
+@media (min-width: 1400px)
+  .container
+    max-width: 1140px
+
+  .visible-xl-block
+    display: block !important
+
+  .hidden-xl-none
+    display: none !important
+
+  .col-xl
+    +col_flex
+
+  @for $i from 0 through 12
+    @if $i == 0
+      $i: auto
+
+      .col-xl-#{$i}
+        +col_flex_auto
+    @else
+      .col-xl-#{$i}
+        +pourcentage($i)
+
+        &::before
+          content: ' xL '

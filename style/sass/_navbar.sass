@@ -1,0 +1,85 @@
+.navbar 
+	position: relative 
+	display: flex 
+	flex-wrap: wrap 
+	align-items: center 
+	justify-content: space-between 
+	padding: 0.5rem 1rem 
+	background-color: #e9d7af
+	.navbar-brand 
+		display: inline-block 
+		padding-top: 0.3125rem 
+		padding-bottom: 0.3125rem 
+		margin-right: 1rem 
+		font-size: 1.25rem 
+		line-height: inherit 
+		white-space: nowrap 
+	.navbar-toggler 
+		padding: 0.25rem 0.75rem 
+		font-size: 1.25rem 
+		line-height: 1 
+		background-color: transparent 
+		border: 1px solid transparent 
+		border-radius: 0.25rem 
+	.navbar-nav 
+		display: inline-block
+		flex-direction: column 
+		padding-left: 0 
+		margin-bottom: 0 
+		list-style: none 
+		.nav-link 
+			display: inline-block 
+			padding: 0.5rem 1rem 
+			color: #343a40 
+		.nav-item 
+			&.dropdown 
+				position: relative 
+				.dropdown-toggle 
+					display: flex 
+					align-items: center 
+					padding-right: 1rem 
+					color: #343a40 
+				.dropdown-menu 
+					position: absolute 
+					top: 100% 
+					left: 0 
+					z-index: 1000 
+					display: none 
+					float: left 
+					min-width: 10rem 
+					padding: 0.5rem 0 
+					margin: 0.125rem 0 0 
+					font-size: 1rem 
+					color: #212529 
+					text-align: left 
+					list-style: none 
+					background-color: #fff 
+					background-clip: padding-box 
+					border: 1px solid rgba(0, 0, 0, 0.15) 
+					border-radius: 0.25rem 
+					.dropdown-item 
+						display: block 
+						width: 100% 
+						padding: 0.25rem 1.5rem 
+						clear: both 
+						font-weight: 400 
+						color: #212529 
+						text-align: inherit 
+						white-space: nowrap 
+						background-color: transparent 
+						border: 0 
+				&:hover 
+					.dropdown-menu 
+						display: block 
+.navbar .navbar-toggler:hover, .navbar .navbar-toggler:focus 
+	text-decoration: none 
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link:focus 
+	color: #1a1a1a 
+	text-decoration: none 
+.navbar .navbar-nav .nav-item.dropdown .dropdown-toggle:hover, .navbar .navbar-nav .nav-item.dropdown .dropdown-toggle:focus 
+	color: #1a1a1a 
+	text-decoration: none 
+.navbar .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item:hover, .navbar .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item:focus 
+	color: #1a1a1a 
+	text-decoration: none 
+	background-color: #f8f9fa 
