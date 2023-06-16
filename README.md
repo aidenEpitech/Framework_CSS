@@ -1,5 +1,5 @@
 
-# W1 - PHP / CSS Generator
+# W1 - PHP / FrameWork SAAS
 
 Projet d'étude pour Epitech.
 
